@@ -59,9 +59,9 @@ Optionally, the following environmental values can be speficified:
 - **CONNECTION_TIMEOUT_DELAY** *(default: 5, timeout for ffmpeg and curl)*
 
 ## Links
-[Docker Hub jtee3d/prusa_connect_rtsp](https://hub.docker.com/r/jtee3d/prusa_connect_rtsp)
+[Docker Hub: jtee3d/prusa_connect_rtsp](https://hub.docker.com/r/jtee3d/prusa_connect_rtsp)
 
-[GitHub jtee3d/prusa_connect_rtsp](https://github.com/jtee3d/prusa_connect_rtsp)
+[GitHub: jtee3d/prusa_connect_rtsp](https://github.com/jtee3d/prusa_connect_rtsp)
 
 ## Support
 
