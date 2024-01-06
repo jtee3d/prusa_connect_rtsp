@@ -42,7 +42,7 @@ services:
 
 ```bash
 docker run \
-  -e RTSP_URLS="\
+  -e CAMERA_URLS="\
 rtsp://username:password@192.168.1.11/live0,\
 http://username:password@192.168.1.12/stream.mjpeg,\
 rtsp://username:password@192.168.1.13/live0" \
