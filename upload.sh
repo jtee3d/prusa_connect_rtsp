@@ -16,8 +16,13 @@ echo ""
 : "${RTSP_URLS:=}"
 : "${TOKENS:=}"
 
+
 RTSP_URLS=$(echo "$RTSP_URLS" | tr -d ' ')
 TOKENS=$(echo "$TOKENS" | tr -d ' ')
+FRAME_CAPTURE_DELAY=${FRAME_CAPTURE_DELAY:-1}
+CAMERA_CYCLE_DELAY=${CAMERA_CYCLE_DELAY:-1}
+
+
 
 IFS="," read -ra RTSP_URLS <<< "$RTSP_URLS"
 IFS="," read -ra TOKENS <<< "$TOKENS"
@@ -59,7 +64,7 @@ while true; do
         else
             echo "FFmpeg returned an error for camera $((i + 1))."
         fi
-        sleep 1
+        sleep "$FRAME_CAPTURE_DELAY"
     done
-    sleep 10
+    sleep "$CAMERA_CYCLE_DELAY"
 done
