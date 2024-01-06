@@ -58,6 +58,10 @@ Optionally, the following environmental values can be speficified:
 - **CAMERA_CYCLE_DELAY** *(default: 10, used as the delay after all cameras have been processed, before looping through them again)*
 - **CONNECTION_TIMEOUT_DELAY** *(default: 5, timeout for ffmpeg and curl)*
 
+## Links
+[Docker Hub jtee3d/prusa_connect_rtsp](https://hub.docker.com/r/jtee3d/prusa_connect_rtsp)
+[GitHub jtee3d/prusa_connect_rtsp](https://github.com/jtee3d/prusa_connect_rtsp)
+
 ## Support
 
 If you would like to support this Docker build, please feel free to buy me a coffee!
