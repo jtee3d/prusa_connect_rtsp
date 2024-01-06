@@ -21,7 +21,7 @@ RTSP_URLS=$(echo "$RTSP_URLS" | tr -d ' ')
 TOKENS=$(echo "$TOKENS" | tr -d ' ')
 FRAME_CAPTURE_DELAY=${FRAME_CAPTURE_DELAY:-1}
 CAMERA_CYCLE_DELAY=${CAMERA_CYCLE_DELAY:-1}
-
+CONNECTION_TIMEOUT_DELAY=${CAMERA_CYCLE_DELAY:-5}
 
 
 IFS="," read -ra RTSP_URLS <<< "$RTSP_URLS"
@@ -51,6 +51,7 @@ while true; do
             -f image2 \
             -vframes 1 \
             -pix_fmt yuvj420p \
+			-timeout "$CONNECTION_TIMEOUT_DELAY" \
             output_$i.jpg
         if [ $? -eq 0 ]; then
             curl -X PUT "$PRUSA_URL" \
@@ -60,7 +61,8 @@ while true; do
                 -H "token: ${TOKENS[$i]}" \
                 --data-binary "@output_$i.jpg" \
                 --no-progress-meter \
-                --compressed
+                --compressed \
+				--max-time "$CONNECTION_TIMEOUT_DELAY"
         else
             echo "FFmpeg returned an error for camera $((i + 1))."
         fi
