@@ -11,7 +11,7 @@ echo " ╚════╝    ╚═╝   ╚══════╝╚════
 echo ""
 echo "This script sends snapshots of RTSP and MJPEG streams to Prusa Connect."
 echo ""
-: "${PRUSA_URL:=https://webcam.connect.prusa3d.com/c/snapshot}"
+: "${PRUSA_URL:=https://camera-service.prusa3d.com/c/snapshot}"
 : "${RTSP_URLS:=}"
 : "${CAMERA_URLS:=}"
 : "${TOKENS:=}"
